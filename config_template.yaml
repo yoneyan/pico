@@ -1,0 +1,31 @@
+patlites:
+  - name: patlite1
+    host: localhost
+    is_http: true
+  - name: patlite2
+    host: localhost
+    is_http: true
+  - name: patlite3
+    host: localhost
+    is_http: true
+patterns:
+  - name: action1
+    actions:
+      - action: send_patlite
+        command:
+          - name: patlite1
+            led: 000001
+          - name: patlite2
+            led: 000001
+          - name: patlite3
+            led: 000001
+      - action: wait
+        command: 10
+      - action: send_patlite
+        command:
+          - name: patlite1
+            led: 000002
+          - name: patlite2
+            led: 000002
+          - name: patlite3
+            led: 000002

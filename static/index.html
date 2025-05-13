@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Command Panel</title>
+</head>
+<body>
+<h1>PikaPika</h1>
+<button onclick="sendCommand('/action1')">命令1</button>
+<button onclick="sendCommand('/action2')">命令2</button>
+<button onclick="sendCommand('/action3')">命令3</button>
+
+<p id="result"></p>
+
+<script>
+    function sendCommand(path) {
+        fetch(path)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerText = data;
+            });
+    }
+</script>
+</body>
+</html>
